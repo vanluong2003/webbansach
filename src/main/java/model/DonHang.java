@@ -134,5 +134,4 @@ public class DonHang {
 		DonHang other = (DonHang) obj;
 		return Objects.equals(maDonHang, other.maDonHang);
 	}
-	
 }
