@@ -9,12 +9,14 @@
 	if(obj!=null){
 		khachHang=(KhachHang)obj;
 	}
+	String url = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+	+ request.getContextPath();
 %>
 <!-- Begin Navbar -->
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#"> <img
-				src="https://media.istockphoto.com/id/1034157536/vector/vector-design-element-for-book-store.jpg?s=612x612&w=0&k=20&c=NEoyiXWj5JqcgLB2B_A08dJyw5RpsNnmi8sIVlCiqZE="
+				src="<%=url%>/img/logo/logo.png"
 				alt="Bootstrap" height="50">
 			</a>
 			<button class="navbar-toggler" type="button"
