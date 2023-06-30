@@ -40,10 +40,9 @@ public class OrderSuccess extends HttpServlet {
 		HttpSession session=request.getSession();
 		KhachHang khachHang= (KhachHang)session.getAttribute("khachHang");
 		String maDonHang=System.currentTimeMillis()+"";
-		int soTien=Integer.parseInt(request.getParameter("tongTien"));
+		double soTien=Double.parseDouble(request.getParameter("tongTien"));
 		String ngayDatHang = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
 		DonHang donHang= new DonHang(maDonHang, khachHang, khachHang.getDiaChiMuaHang(), khachHang.getDiaChiNhanHang(), soTien, Date.valueOf(ngayDatHang));
-		
 		DonHangDAO dhDAO=new DonHangDAO();
 		dhDAO.insert(donHang);
 		ArrayList<SanPham> listOrder = new ArrayList<SanPham>();
