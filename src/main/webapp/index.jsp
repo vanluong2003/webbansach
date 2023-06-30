@@ -14,14 +14,25 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
 </head>
 <style>
-    #product {
-      zoom: 0.9; /* Thu nhỏ tỉ lệ 80% */
-      transform: scale(0.9); /* Thu nhỏ tỉ lệ 80% */
-    }
-    .rq{
-			color: red;
-		}
- </style>
+#product {
+	zoom: 0.91; /* Thu nhỏ tỉ lệ 80% */
+	transform: scale(0.91); /* Thu nhỏ tỉ lệ 80% */
+}
+
+.rq {
+	color: red;
+}
+
+#two-lines {
+	display: inline-block;
+	width: 100%;
+	line-height: 1.5; /* Điều chỉnh khoảng cách giữa các dòng */
+	max-height: 3em; /* Chiều cao tối đa là 2 dòng */
+	overflow: hidden;
+	text-overflow: ellipsis;
+	/* Hiển thị dấu ba chấm khi văn bản bị cắt ngắn */
+}
+</style>
 <body>
 <jsp:include page="menu.jsp"></jsp:include>
 	<!-- Page Content -->
@@ -64,7 +75,7 @@
 				</div>
 				</div>
 				<!-- End Slider -->
-				<br/>
+		
 				<!-- Products -->
 				<div class="row" id="product">
 					<%
@@ -72,12 +83,12 @@
 					for (SanPham sanPham : listSP) { 
 					%>
 					<div class="col-md-2">
-						<div class="card" style="width: 18rem;">
-							<img
+						<div class="card" style="width: 17rem; height: 25rem;">
+							<img 
 								src="<%=sanPham.getImg()%>"
 								class="card-img-top" alt="..." height="300">
 							<div class="card-body">
-								<h5 class="card-title">
+								<h5 class="card-title" >
 								<a class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover" 
 									href="chi-tiet-san-pham?maSanPham=<%=sanPham.getMaSanPham() %>"><%=sanPham.getTenSanPham() %></a>
 								</h5>
