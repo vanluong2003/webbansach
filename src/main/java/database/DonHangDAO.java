@@ -94,7 +94,7 @@ public class DonHangDAO implements DAOInterface<DonHang> {
 	public int insert(DonHang t) {
 		int kq = 0;
 		Connection con = JDBCUtil.getConnection();
-		String sql = "INSERT INTO donhang(madonhang, khachhang, diachinguoimua, diachinguoinhan, tienthieu,ngaydathang)"
+		String sql = "INSERT INTO donhang(madonhang, makhachhang, diachinguoimua, diachinguoinhan, tienthieu, ngaydathang)"
 				+ "VALUES (?, ?, ?, ?, ?, ?)";
 		try {
 			PreparedStatement st = con.prepareStatement(sql);
